@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KActionBar</string>
     <string name="back">back</string>
+    <string name="text_test">test</string>
 </resources>

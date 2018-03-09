@@ -21,12 +21,11 @@ inline fun ViewManager.ntActionBar(init: (@AnkoViewDslMarker NTActionBar).() -> 
 
 class NTActionBar(ctx: Context) : _RelativeLayout(ctx) {
 
+
     lateinit var title: TextView
-    lateinit var description: TextView
-    lateinit var required: TextView
-    lateinit var spinner: Spinner
+
     lateinit var imageView: ImageView
-    lateinit var linerarLayout: LinearLayout
+
     lateinit var relativeLayout: RelativeLayout
 
     init {
@@ -37,18 +36,20 @@ class NTActionBar(ctx: Context) : _RelativeLayout(ctx) {
 
             relativeLayout = relativeLayout {
                 id = View.generateViewId()
-                gravity = Gravity.CENTER_VERTICAL
+
 
                 imageView = imageView {
+                    isClickable = true
                     id = View.generateViewId()
                     visibility = View.GONE
 
                 }.lparams {
-                    topMargin = dip(14)
-                    bottomMargin = dip(14)
-                    leftMargin = dip(8)
-                    height = matchParent
-                    width = dip(54)
+
+                    topMargin = dip(16)
+                    bottomMargin = dip(16)
+                    height = dip(24)
+                    width = dip(24)
+                    marginStart = dip (24)
 
 
                 }
@@ -61,11 +62,13 @@ class NTActionBar(ctx: Context) : _RelativeLayout(ctx) {
 
                 }.lparams {
 
-                    rightOf(imageView)
+                 marginStart = dip (72)
+
+
 
                     topMargin = dip(8)
                     bottomMargin = dip(8)
-                    leftMargin = dip(8)
+
                     height = matchParent
                     width = matchParent
                 }
@@ -77,8 +80,8 @@ class NTActionBar(ctx: Context) : _RelativeLayout(ctx) {
         }.lparams {
 
             width = matchParent
-          val  heights = dip(56)
-               height   =  heights
+
+               height   =   dip(56)
             gravity = Gravity.END
             elevation = dip(8).toFloat()
 
